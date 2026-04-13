@@ -1,8 +1,11 @@
+import farmaciaImg from "../../assets/farmacia.png";
+
 function Home() {
+    
 	return (
 		<div className="flex justify-center items-center min-h-[80vh] mt-12 px-4">
 			<div className="grid grid-cols-1 md:grid-cols-2 
-				bg-gradient-to-br from-emerald-900 to-emerald-500 
+				bg-linear-to-br from-emerald-900 to-emerald-500 
 				w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl">
 
 				<div className="flex flex-col justify-center p-8 md:p-12 text-white gap-6">
@@ -30,7 +33,7 @@ function Home() {
 
                     <div className="hidden md:flex items-center justify-center p-6">
                     <img
-                        src="src\assets\farmacia.png"
+                        src={farmaciaImg}
                         alt="Farmácia"
                         className="w-full max-w-md object-contain"
                     />

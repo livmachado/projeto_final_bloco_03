@@ -10,7 +10,7 @@ function NavBar() {
 			>
 				<div className="container flex items-center justify-between mx-6 mt-2 text-lg">
 					<Link
-						to="/"
+						to="/home"
 						className="text-2xl font-bold"
 					>
                         <span className="font-serif text-2xl text-emerald-900 tracking-tight flex-1">
