@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import { MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react";
 
 function SearchForm() {

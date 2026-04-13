@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { ClipLoader } from "react-spinners"
+import { ClipLoader  } from "react-spinners"
 import type Categoria from "../../../models/Categoria"
 import { deletar, listar } from "../../../services/Service"
 
@@ -82,7 +82,10 @@ function DeletarCategoria() {
                 onClick={deletarCategoria}
                 >
                 {isLoading ? (
-                    <ClipLoader color="#ffffff" size={20} />
+                    <ClipLoader
+                            color="#ffffff"
+                            size={24}
+                    />
                 ) : (
                     "Deletar"
                 )}

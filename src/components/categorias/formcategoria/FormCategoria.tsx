@@ -73,43 +73,64 @@ function FormCategoria() {
   }
 
   return (
-    <div className="container flex flex-col items-center justify-center px-2 pt-4 mx-auto mt-16">
-      <h1 className="my-8 text-3xl text-center md:text-4xl">
-        {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
-      </h1>
+    <div className="flex items-center justify-center min-h-[80vh] px-4">
 
-      <form className="flex flex-col w-full max-w-md gap-4 px-2 md:max-w-1/2"
-        onSubmit={gerarNovaCategoria}
-      >
-        <div className="flex flex-col gap-2 ">
-          <label htmlFor="nome">Categoria</label>
-          <input
-            type="text"
-            placeholder="Categoria"
-            id='nome'
-            name='nome'
-            className="p-2 text-base bg-white border-2 rounded border-slate-700 utral-800 md:text-lg"
-            required
-            value={categoria.nome}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
+      <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl overflow-hidden">
+
+        {/* Header */}
+        <div className="bg-linear-to-r from-emerald-700 to-emerald-500 text-white text-center py-5">
+          <h1 className="text-2xl font-bold">
+            {id === undefined ? 'Nova Categoria' : 'Editar Categoria'}
+          </h1>
+          <p className="text-sm opacity-90">
+            Organize melhor seus produtos
+          </p>
         </div>
-        <button
-          className="flex justify-center w-full py-2 mx-auto text-base rounded text-slate-100 bg-slate-400 hover:bg-slate-800 md:w-1/2 md:text-lg"
-          type="submit"
+
+        {/* Form */}
+        <form
+          onSubmit={gerarNovaCategoria}
+          className="p-6 flex flex-col gap-5"
         >
-          {isLoading ?
-            <ClipLoader
-            color="#ffffff"
-            size={24}
-          />
-            :
-            <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
-          }
-        </button>
-      </form>
+
+          <div className="flex flex-col gap-1">
+            <label htmlFor="nome" className="text-sm font-semibold text-slate-600">
+              Nome da Categoria
+            </label>
+
+            <input
+              type="text"
+              id="nome"
+              name="nome"
+              placeholder="Ex: Medicamentos"
+              required
+              value={categoria.nome}
+              onChange={atualizarEstado}
+              className="p-3 border border-slate-300 rounded-xl 
+              focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
+            />
+          </div>
+
+          {/* Botão */}
+          <button
+            type="submit"
+            className="mt-2 bg-emerald-600 hover:bg-emerald-700 text-white 
+            font-semibold py-3 rounded-xl flex justify-center items-center 
+            transition-all hover:scale-[1.02]"
+          >
+            {isLoading ? (
+              <ClipLoader color="#ffffff" size={20} />
+            ) : (
+              <span>
+                {id === undefined ? 'Cadastrar Categoria' : 'Atualizar Categoria'}
+              </span>
+            )}
+          </button>
+
+        </form>
+      </div>
     </div>
-  );
+  )
 }
 
 export default FormCategoria;

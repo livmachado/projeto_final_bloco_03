@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { FadeLoader} from "react-spinners"
+import { ClipLoader } from "react-spinners"
 import type Categoria from "../../../models/Categoria"
 import { listar } from "../../../services/Service"
 import CardCategorias from "../cardcategorias/CardCategorias"
@@ -22,9 +22,9 @@ function ListarCategorias() {
 		<>
 			{isLoading && (
 				<div className="flex justify-center items-center min-h-[calc(100vh-8rem)] w-full overflow-x-hidden">
-					<FadeLoader 
+					<ClipLoader
 						color="#0D9488"
-						margin={0}
+						size={80}
 						speedMultiplier={2}
 					/>
 				</div>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { UserIcon, ShoppingCartSimpleIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
+import { UserIcon, ShoppingCartSimpleIcon } from "@phosphor-icons/react";
 import SearchForm from './SearchForm';
 
 function NavBar() {
@@ -19,7 +19,7 @@ function NavBar() {
 						to="/categorias"
 						className="relative font-medium 
 						after:absolute after:left-0 after:-bottom-1 
-						after:h-[2px] after:w-0 after:bg-emerald-500 
+						after:h-0.5 after:w-0 after:bg-emerald-500 
 						after:transition-all after:duration-300 
 						hover:after:w-full"
 					>
@@ -30,7 +30,7 @@ function NavBar() {
 						to="/cadcategoria"
 						className="relative font-medium 
 						after:absolute after:left-0 after:-bottom-1 
-						after:h-[2px] after:w-0 after:bg-emerald-500 
+						after:h-0.5 after:w-0 after:bg-emerald-500 
 						after:transition-all after:duration-300 
 						hover:after:w-full"
 					>

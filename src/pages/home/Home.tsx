@@ -1,9 +1,12 @@
+import { Link } from "react-router-dom";
 import farmaciaImg from "../../assets/farmacia.png";
+import ListaProdutos from "../../components/produtos/listaprodutos/ListaProdutos";
+import ModalProduto from "../../components/produtos/modalpostagem/ModalProduto";
 
 function Home() {
-    
 	return (
-		<div className="flex justify-center items-center min-h-[80vh] mt-12 px-4">
+		<div className="flex flex-col items-center min-h-[80vh] px-4 gap-8">
+			
 			<div className="grid grid-cols-1 md:grid-cols-2 
 				bg-linear-to-br from-emerald-900 to-emerald-500 
 				w-full max-w-6xl rounded-3xl overflow-hidden shadow-2xl">
@@ -21,25 +24,24 @@ function Home() {
 					</p>
 
 					<div className="flex gap-4 mt-4">
-						<button className="bg-white text-emerald-700 font-semibold px-6 py-3 rounded-xl hover:scale-105 transition">
+						<Link to='/produtos' className="bg-white text-emerald-700 font-semibold px-6 py-3 rounded-xl hover:scale-105 transition">
 							Ver Produtos
-						</button>
+						</Link>
+						<ModalProduto />
 
-						<button className="border-2 border-white px-6 py-3 rounded-xl hover:bg-white hover:text-emerald-700 transition">
-							Novo Produto
-						</button>
 					</div>
 				</div>
 
-                    <div className="hidden md:flex items-center justify-center p-6">
-                    <img
-                        src={farmaciaImg}
-                        alt="Farmácia"
-                        className="w-full max-w-md object-contain"
-                    />
-                    </div>
-
+				<div className="hidden md:flex items-center justify-center p-6">
+					<img
+						src={farmaciaImg}
+						alt="Farmácia"
+						className="w-full max-w-md object-contain"
+					/>
+				</div>
 			</div>
+            <ListaProdutos />
+
 		</div>
 	);
 }
