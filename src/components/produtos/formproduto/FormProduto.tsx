@@ -6,6 +6,7 @@ import { atualizar, cadastrar, listar } from "../../../services/Service"
 
 import type Categoria from "../../../models/Categoria"
 import type Produto from "../../../models/Produto"
+import { ToastAlert } from "../../../utils/ToastAlert"
 
 function FormProduto() {
 	const navigate = useNavigate()
@@ -25,7 +26,7 @@ function FormProduto() {
 		try {
 			await listar(`/produtos/${id}`, setProduto)
 		} catch (error: any) {
-			alert("Erro ao Buscar Produto")
+			ToastAlert("Erro ao Buscar Produto", 'erro')
 			console.error(error)
 		}
 	}
@@ -34,7 +35,7 @@ function FormProduto() {
 		try {
 			await listar(`/categorias/${id}`, setCategoria)
 		} catch (error: any) {
-			alert("Erro ao Buscar Categoria")
+			ToastAlert("Erro ao Buscar Categoria", 'erro')
 			console.error(error)
 		}
 	}
@@ -43,7 +44,7 @@ function FormProduto() {
 		try {
 			await listar(`/categorias`, setCategorias)
 		} catch (error: any) {
-			alert("Erro ao Buscar Categorias")
+			ToastAlert("Erro ao Buscar Categorias", 'erro')
 			console.error(error)
 		}
 	}
@@ -92,18 +93,18 @@ function FormProduto() {
 			try {
 				await atualizar(`/produtos`, produto, setProduto)
 
-				alert("Produto atualizado com sucesso")
+				ToastAlert("Produto atualizado com sucesso", 'sucesso')
 			} catch (error: any) {
-				alert("Erro ao atualizar o Produto!")
+				ToastAlert("Erro ao atualizar o Produto!", 'erro')
 				console.error(error)
 			}
 		} else {
 			try {
 				await cadastrar(`/produtos`, produto, setProduto)
 
-				alert("Produto cadastrado com sucesso")
+				ToastAlert("Produto cadastrado com sucesso", 'sucesso')
 			} catch (error: any) {
-				alert("Erro ao cadastrar o Produto!")
+				ToastAlert("Erro ao cadastrar o Produto!", 'erro')
 				console.error(error)
 			}
 		}

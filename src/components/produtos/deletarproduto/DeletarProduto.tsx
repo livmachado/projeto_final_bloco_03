@@ -7,6 +7,7 @@ import { deletar, listar } from "../../../services/Service"
 
 //model
 import type Produto from "../../../models/Produto"
+import { ToastAlert } from "../../../utils/ToastAlert"
 
 
 function DeletarProduto() {
@@ -22,7 +23,7 @@ function DeletarProduto() {
         try {
             await listar(`/produtos/${id}`, setProduto)
         } catch (error: any) {
-            alert('Produto não encontrado!')
+            ToastAlert('Produto não encontrado!', 'erro')
             console.error(error)
         }
     }
@@ -39,10 +40,10 @@ function DeletarProduto() {
         try {
             await deletar(`/produtos/${id}`)
 
-           alert('Produto apagado!')
+           ToastAlert('Produto apagado!', 'sucesso')
 
         } catch (error) {
-           alert('Erro ao apagar o produto')
+           ToastAlert('Erro ao apagar o produto', 'erro')
            console.error(error)
         }
 
